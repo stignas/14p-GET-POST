@@ -12,9 +12,9 @@ $todos = json_decode(file_get_contents('data.json'), true);
 <fieldset>
     <legend>New TODO</legend>
     <form action="submit.php" method='GET'>
-        <input type='text' name="todo" placeholder="Enter the task...">
-        <input type="date" name="date">
-        <input type="time" name="time">
+        <input type='text' name="todo" placeholder="Enter the task..." required>
+        <input type="date" name="date" min="<?= date('Y-m-d') ?>">
+        <input type="time" name="time" required>
         <input type="submit">
     </form>
 </fieldset>
