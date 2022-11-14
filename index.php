@@ -29,7 +29,7 @@ $todos = json_decode(file_get_contents('data.json'), true);
                     <td style="text-align: right">Created At: <?= $task['createdAt'] ?></td>
                     <td>
                         <form method="POST" action="delete.php">
-                            <button><input type="hidden" name="id" value="<?= $key ?>">Delete <?= $key ?></button>
+                            <button type="submit"><input type="hidden" name="id" value="<?= $key ?>">Delete</button>
                         </form>
                     </td>
                 </tr>
