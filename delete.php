@@ -14,12 +14,12 @@ $index = intval($_POST['id']); ?>
 
 <!--Patikrinam ar duomenų masyve yra užduotis su duotu ID, ištrinam iš masyvo ir atnaujinam duomenų failą -->
 <?php if (isset($taskArray[$index])): ?>
-    <?php $tasktoDelete = $taskArray[$index]['todo'];
+    <?php $taskToDelete = $taskArray[$index]['todo'];
     unset($taskArray[$index]);
     file_put_contents('data.json', json_encode(array_values($taskArray), JSON_PRETTY_PRINT));
     ?>
 <!-- Pranešame apie sėkmingai ištrintą įrašą -->
-    <h3>Užduotis <i>"<?= $tasktoDelete ?>"</i> ištrinta.</h3>
+    <h3>Užduotis <i>"<?= $taskToDelete ?>"</i> ištrinta.</h3>
 <?php else: ?>
 <!-- Pranešame, jeigu įrašas pagal duotą ID neegzistuoja -->
     <h2>Toks įrašas neegzistuoja.</h2>
