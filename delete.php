@@ -18,17 +18,17 @@ $index = intval($_POST['id']); ?>
     unset($taskArray[$index]);
     file_put_contents('data.json', json_encode(array_values($taskArray), JSON_PRETTY_PRINT));
     ?>
-<!-- Pranešame apie sėkmingai ištrintą įrašą -->
+    <!-- Pranešame apie sėkmingai ištrintą įrašą -->
     <h3>Užduotis <i>"<?= $taskToDelete ?>"</i> ištrinta.</h3>
 <?php else: ?>
-<!-- Pranešame, jeigu įrašas pagal duotą ID neegzistuoja -->
+    <!-- Pranešame, jeigu įrašas pagal duotą ID neegzistuoja -->
     <h2>Toks įrašas neegzistuoja.</h2>
 <?php endif ?>
 <!-- Redirectinam atgal į pradinį puslapį po 2s-->
 <script>
-    setTimeout(()=>{
+    setTimeout(() => {
         window.location = './index.php'
-    },2000)
+    }, 2000)
 </script>
 </body>
 </html>
